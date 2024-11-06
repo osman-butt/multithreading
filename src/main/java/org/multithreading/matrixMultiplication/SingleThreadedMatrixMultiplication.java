@@ -2,10 +2,29 @@ package org.multithreading.matrixMultiplication;
 
 import java.util.concurrent.ExecutionException;
 
-public class SingleThreadedMatrixMultiplication<T extends Number> extends MatrixMultiplication<T>{
+public class SingleThreadedMatrixMultiplication extends MatrixMultiplication{
 
     @Override
-    public T[][] multiply(T[][] A, T[][] B) throws IllegalArgumentException, ExecutionException, InterruptedException {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public int[][] multiply(int[][] A, int[][] B) throws IllegalArgumentException, ExecutionException, InterruptedException {
+        int rowsA = A.length;
+        int colsA = A[0].length;
+        int rowsB = B.length;
+        int colsB = B[0].length;
+
+        if (colsA != rowsB) {
+            throw new IllegalArgumentException("Matrix dimensions are incompatible for multiplication");
+        }
+
+        int[][] C = new int[rowsA][colsB];
+
+        for (int i = 0; i < rowsA; i++) {
+            for (int j = 0; j < colsB; j++) {
+                for (int k = 0; k < colsA; k++) {
+                    C[i][j] += A[i][k] * B[k][j];
+                }
+            }
+        }
+        return C;
     }
+
 }

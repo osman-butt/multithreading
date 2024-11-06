@@ -2,9 +2,10 @@ package org.multithreading.matrixMultiplication;
 
 import java.util.concurrent.ExecutionException;
 
-public class MultithreadedMatrixMultiplication<T extends Number> extends MatrixMultiplication<T>{
+public class MultithreadedMatrixMultiplication extends MatrixMultiplication{
+
     @Override
-    public T[][] multiply(T[][] A, T[][] B) throws IllegalArgumentException, ExecutionException, InterruptedException {
+    public int[][] multiply(int[][] A, int[][] B) throws IllegalArgumentException, ExecutionException, InterruptedException {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 }
