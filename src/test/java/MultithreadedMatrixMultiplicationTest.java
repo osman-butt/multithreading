@@ -1,7 +1,6 @@
 import org.junit.jupiter.api.Test;
 import org.multithreading.matrixMultiplication.MatrixMultiplication;
 import org.multithreading.matrixMultiplication.MultithreadedMatrixMultiplication;
-import org.multithreading.matrixMultiplication.SingleThreadedMatrixMultiplication;
 
 import java.util.concurrent.ExecutionException;
 
